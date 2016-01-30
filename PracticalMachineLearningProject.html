@@ -267,7 +267,8 @@ confusionMatrix</code></pre>
 ## Detection Rate         0.2834   0.1917   0.1735   0.1626   0.1835
 ## Detection Prevalence   0.2846   0.1927   0.1755   0.1631   0.1840
 ## Balanced Accuracy      0.9974   0.9945   0.9963   0.9961   0.9988</code></pre>
-<p><strong>Out of sample error</strong> Prediction on the test set using the rf model</p>
+<p><strong>Out of sample error</strong></p>
+<p> Prediction on the test set using the rf model</p>
 <pre class="r"><code>misClass = function(values, predicted) {
   sum(predicted != values) / length(values)
 }
@@ -279,7 +280,7 @@ OutOfSamplErrRate</code></pre>
 <pre class="r"><code>QuizPredictions20 &lt;- predict(model, newdata=testing)
 testing$classe &lt;- QuizPredictions20</code></pre>
 <pre><code>## [1] B A B A A E D B A A B C B A E E A B B B
-##Levels: A B C D E</code></pre>
+## Levels: A B C D E</code></pre>
 <p>Accuracy Statistics of the model on the original testing data</p>
 <pre class="r"><code>validateTest &lt;- predict(model, newdata=testing)
 confusionMatrixTest &lt;- confusionMatrix(validateTest, testing$classe)
@@ -287,14 +288,14 @@ confusionMatrix</code></pre>
 <pre><code>## Confusion Matrix and Statistics
 ##
 ##          Reference
-##Prediction A B C D E
+## Prediction A B C D E
 ##         A 7 0 0 0 0
 ##         B 0 8 0 0 0
 ##         C 0 0 1 0 0
 ##         D 0 0 0 1 0
 ##         E 0 0 0 0 3
 ##
-##Overall Statistics
+## Overall Statistics
 ##                                     
 ##               Accuracy : 1          
 ##                 95% CI : (0.8316, 1)
@@ -304,17 +305,17 @@ confusionMatrix</code></pre>
 ##                  Kappa : 1          
 ## Mcnemar's Test P-Value : NA         
 ##
-##Statistics by Class:
+## Statistics by Class:
 ##
 ##                     Class: A Class: B Class: C Class: D Class: E
-##Sensitivity              1.00      1.0     1.00     1.00     1.00
-##Specificity              1.00      1.0     1.00     1.00     1.00
-##Pos Pred Value           1.00      1.0     1.00     1.00     1.00
-##Neg Pred Value           1.00      1.0     1.00     1.00     1.00
-##Prevalence               0.35      0.4     0.05     0.05     0.15
-##Detection Rate           0.35      0.4     0.05     0.05     0.15
-##Detection Prevalence     0.35      0.4     0.05     0.05     0.15
-##Balanced Accuracy        1.00      1.0     1.00     1.00     1.00</code></pre>
+## Sensitivity              1.00      1.0     1.00     1.00     1.00
+## Specificity              1.00      1.0     1.00     1.00     1.00
+## Pos Pred Value           1.00      1.0     1.00     1.00     1.00
+## Neg Pred Value           1.00      1.0     1.00     1.00     1.00
+## Prevalence               0.35      0.4     0.05     0.05     0.15
+## Detection Rate           0.35      0.4     0.05     0.05     0.15
+## Detection Prevalence     0.35      0.4     0.05     0.05     0.15
+## Balanced Accuracy        1.00      1.0     1.00     1.00     1.00</code></pre>
 <p><strong>Conclusion</strong></p>
 <p> Random forests were used to build a model to predict the classe (either A, B, C, D or E) for 20 observations quite accurately(Balanced Accuracy for all five classe A,B,C,D and E is 1.00 on the testing data from pml-testing.csv).</p>
 
